@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Frontend README.md
 
-First, run the development server:
+```markdown
+# Movie Search App - Frontend
 
+A React/Next.js frontend application for searching and saving movies with a modern UI built with Shadcn components.
+
+## Features
+
+- User authentication (login/register)
+- Movie search functionality
+- Save favorite movies
+- Responsive design with modern UI
+- Protected routes for authenticated users
+
+## Tech Stack
+
+- Next.js 14+ (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Shadcn UI components
+- Axios for API calls
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- Backend server running (see backend README)
+
+## Installation
+
+1. Clone the repository:
 ```bash
+git clone <your-repo-url>
+cd frontend
+Install dependencies:
+
+bash
+npm install
+Create environment file:
+
+bash
+cp .env.local.example .env.local
+Configure environment variables in .env.local:
+
+env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+Running the Application
+Development Mode
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Application will start on http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production Build
+bash
+npm run build
+npm start
+Project Structure
+text
+frontend/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── (auth)/         # Authentication pages
+│   │   ├── (protected)/    # Protected pages
+│   │   ├── globals.css     # Global styles
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Home page
+│   ├── components/         # React components
+│   │   ├── ui/            # Shadcn UI components
+│   │   ├── auth/          # Authentication components
+│   │   ├── movies/        # Movie-related components
+│   │   └── layout/        # Layout components
+│   ├── lib/               # Utility libraries
+│   └── types/             # TypeScript type definitions
+├── public/                # Static assets
+├── next.config.js         # Next.js configuration
+└── tailwind.config.ts     # Tailwind CSS configuration
+Pages
+Public Pages
+/ - Home page with navigation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+/login - User login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/register - User registration
 
-## Learn More
+Protected Pages (require authentication)
+/search - Movie search page
 
-To learn more about Next.js, take a look at the following resources:
+/saved - Saved movies page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Component Architecture
+Authentication Components
+LoginForm - User login form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+RegisterForm - User registration form
 
-## Deploy on Vercel
+Movie Components
+MovieCard - Individual movie display card
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+SearchForm - Movie search input and button
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SavedMovies - Grid of saved movies
+
+Layout Components
+Header - Navigation header with auth state
+
+ProtectedRoute - Route protection wrapper
+
+API Integration
+The frontend communicates with the backend API using Axios:
+
+Authentication
+Register: POST /api/auth/register
+
+Login: POST /api/auth/login
+
+Movies
+Search: GET /api/movies/search?title=...
+
+Save: POST /api/movies/save
+
+List: GET /api/movies/list
+
+Styling
+Tailwind CSS for utility-first styling
+
+Shadcn UI for pre-built components
+
+Custom CSS in globals.css for global styles
+
+Development
+Scripts
+npm run dev - Start development server
+
+npm run build - Build for production
+
+npm run start - Start production server
+
+npm run lint - Run ESLint
+
+Adding New UI Components
+bash
+npx shadcn@latest add [component-name]
+Environment Variables
+Variable	Description	Default
+NEXT_PUBLIC_API_URL	Backend API base URL	http://localhost:5000/api

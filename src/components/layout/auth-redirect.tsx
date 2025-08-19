@@ -12,7 +12,6 @@ export default function AuthRedirect({ children }: AuthRedirectProps) {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to search page if already authenticated
     if (isAuthenticated()) {
       router.push('/search');
     }

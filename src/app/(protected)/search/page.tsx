@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import ProtectedRoute from '@/components/layout/protected-route';
 import SearchForm from '@/components/movies/search-form';
 import MovieCard from '@/components/movies/movie-card';
