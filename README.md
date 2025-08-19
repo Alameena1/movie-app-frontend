@@ -16,7 +16,7 @@ A React/Next.js frontend application for searching and saving movies with a mode
 
 ## Tech Stack
 
-- Next.js 14+ (App Router)
+- Next.js 14+ 
 - React 18
 - TypeScript
 - Tailwind CSS
@@ -25,14 +25,14 @@ A React/Next.js frontend application for searching and saving movies with a mode
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
-- Backend server running (see backend README)
+- Node.js 
+- Backend server running 
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/Alameena1/movie-app-frontend.git>
 cd frontend
 Install dependencies:
 
