@@ -141,7 +141,7 @@ npm run lint - Run ESLint
 
 Adding New UI Components
 bash
-npx shadcn@latest add [component-name]
+npx shadcn@latest add 
 Environment Variables
 Variable	Description	Default
 NEXT_PUBLIC_API_URL	Backend API base URL	http://localhost:5000/api
